@@ -1,0 +1,13 @@
+dpass %>% 
+  ggplot() +
+  aes(x = sim, group = sd, y = similarityS,linetype=sd) +
+  stat_summary(fun.y = mean, geom = "point") +
+  stat_summary(fun.y = mean, geom = "line")+
+  labs(x = "",y='Perceived Similarity')+
+  scale_x_discrete(expand=c(0.17, 0))+
+  guides(color=guide_legend(""))+
+  scale_linetype_manual(values=c("longdash", "dotted",'solid'))+
+  theme_bw() +
+  theme(text=element_text(family="Times New Roman", face="bold", size=22))+
+  theme(legend.position="bottom") +
+  theme(legend.title=element_blank())
